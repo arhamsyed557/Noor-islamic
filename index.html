@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noor Quest</title>
+  <meta name="description" content="Noor Quest - an Islamic learning and worship companion.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <div class="brand">🌙 Noor Quest</div>
+        <div class="subtitle">Learn • Remember • Grow</div>
+      </div>
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+    </header>
+
+    <main>
+      <section id="home" class="screen active">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Assalamu Alaikum</p>
+            <h1>Welcome to Noor Quest</h1>
+            <p>Build knowledge, complete good habits, and grow your streak.</p>
+          </div>
+          <div class="level-badge"><span id="level">1</span><small>LEVEL</small></div>
+        </div>
+
+        <div class="stats">
+          <div class="card"><span>⭐ XP</span><strong id="xp">0</strong></div>
+          <div class="card"><span>🔥 Streak</span><strong id="streak">0</strong></div>
+          <div class="card"><span>📿 Tasbih</span><strong id="tasbihTotal">0</strong></div>
+        </div>
+
+        <div class="card progress-card">
+          <div class="row"><strong>Level progress</strong><span id="progressText">0 / 100 XP</span></div>
+          <div class="progress"><div id="progressBar"></div></div>
+        </div>
+
+        <div class="grid">
+          <button class="feature" data-screen="quiz">🧠<b>Islamic Quiz</b><span>Earn XP</span></button>
+          <button class="feature" data-screen="duas">🤲<b>Duas</b><span>Daily supplications</span></button>
+          <button class="feature" data-screen="tasbih">📿<b>Tasbih</b><span>Remember Allah</span></button>
+          <button class="feature" data-screen="goals">🎯<b>Daily Goals</b><span>Keep your streak</span></button>
+        </div>
+      </section>
+
+      <section id="quiz" class="screen">
+        <div class="section-head"><button class="back" data-screen="home">←</button><div><h2>Islamic Quiz</h2><p>Test your knowledge and earn XP.</p></div></div>
+        <div class="card quiz-card">
+          <div class="quiz-meta"><span id="questionNo">Question 1</span><span>+10 XP</span></div>
+          <h3 id="question">Loading question...</h3>
+          <div id="answers" class="answers"></div>
+          <p id="quizFeedback" class="feedback"></p>
+          <button id="nextQuestion" class="primary" hidden>Next Question →</button>
+        </div>
+      </section>
+
+      <section id="duas" class="screen">
+        <div class="section-head"><button class="back" data-screen="home">←</button><div><h2>Duas</h2><p>Keep these supplications close.</p></div></div>
+        <div id="duasList"></div>
+      </section>
+
+      <section id="tasbih" class="screen">
+        <div class="section-head"><button class="back" data-screen="home">←</button><div><h2>Digital Tasbih</h2><p>Tap to count your dhikr.</p></div></div>
+        <div class="tasbih card">
+          <div class="dhikr">سُبْحَانَ اللَّهِ</div>
+          <div id="counter" class="counter">0</div>
+          <button id="tasbihBtn" class="tasbih-btn">Tap</button>
+          <button id="resetTasbih" class="secondary">Reset counter</button>
+        </div>
+      </section>
+
+      <section id="goals" class="screen">
+        <div class="section-head"><button class="back" data-screen="home">←</button><div><h2>Daily Goals</h2><p>Small consistent actions matter.</p></div></div>
+        <div id="goalsList"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-screen="home">🏠<span>Home</span></button>
+      <button data-screen="quiz">🧠<span>Quiz</span></button>
+      <button data-screen="duas">🤲<span>Duas</span></button>
+      <button data-screen="tasbih">📿<span>Tasbih</span></button>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
